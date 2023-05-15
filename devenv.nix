@@ -5,7 +5,7 @@
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = with pkgs; [ git gmp ];
+  packages = with pkgs; [ git gmp pyright ];
 
   # https://devenv.sh/scripts/
 
@@ -20,6 +20,8 @@
     package = pkgs.python311.withPackages (ps: with ps;
       [
         gmpy2
+        black
+        flake8
       ]);
     venv.enable = true;
   };
